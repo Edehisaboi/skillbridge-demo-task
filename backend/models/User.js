@@ -1,5 +1,6 @@
-import mongoose from "mongoose";
+import mongoose from "mongoose"; // Import Mongoose for MongoDB object modeling
 
+// Define the schema for the User collection
 const UserSchema = new mongoose.Schema({
     firstName: {
         type: String,
@@ -31,7 +32,8 @@ const UserSchema = new mongoose.Schema({
         default: []
     }
 }, {
-    timestamps: true
+    timestamps: true    // Automatically adds createdAt and updatedAt timestamps
 });
 
+// Export the Mongoose model based on the defined schema
 export default mongoose.model("User", UserSchema);

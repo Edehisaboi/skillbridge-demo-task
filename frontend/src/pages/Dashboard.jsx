@@ -8,6 +8,7 @@ const Dashboard = () => {
     const [isEditing, setIsEditing] = useState(false);
     const userId = localStorage.getItem("userId");
 
+    // Fetch user profile data on component mount
     useEffect(() => {
         if (!userId) return;
 
@@ -34,6 +35,7 @@ const Dashboard = () => {
             .catch((error) => console.error("Error fetching user data:", error));
     }, [userId]);
 
+    // Handle input changes for form fields
     const handleChange = (e) => {
         setUserData((prev) => ({
             ...prev,
@@ -41,6 +43,7 @@ const Dashboard = () => {
         }));
     };
 
+    // Handle job selection (toggle application status for a company)
     const handleJobSelection = (company) => {
         setUserData((prev) => ({
             ...prev,
@@ -52,6 +55,7 @@ const Dashboard = () => {
         }));
     };
 
+    // Save updated profile data
     const handleSave = async () => {
         if (!userData.firstName || !userData.lastName || !userData.email) {
             alert("First Name, Last Name, and Email are required.");
@@ -93,26 +97,26 @@ const Dashboard = () => {
             <div className="profile-section">
                 <h3>Profile Details</h3>
                 {!isEditing ? (
-                    <>
-                        <div className="user-details">
-                            <p><strong>First Name:</strong> {userData.firstName}</p>
-                            <p><strong>Last Name:</strong> {userData.lastName}</p>
-                            <p><strong>Email:</strong> {userData.email}</p>
-                            <p><strong>Skills:</strong> {userData.skills || "None"}</p>
-                            <p><strong>Bio:</strong> {userData.bio || "No bio available"}</p>
-                            <p><strong>Applied Jobs:</strong> {userData.jobApplications.length > 0 ? userData.jobApplications.join(", ") : "None"}</p>
-                            <button className="edit-btn" onClick={() => setIsEditing(true)}>Edit Profile</button>
-                        </div>
-                    </>
+                    // Display profile information
+                    <div className="user-details">
+                        <p><strong>First Name:</strong> {userData.firstName}</p>
+                        <p><strong>Last Name:</strong> {userData.lastName}</p>
+                        <p><strong>Email:</strong> {userData.email}</p>
+                        <p><strong>Skills:</strong> {userData.skills || "None"}</p>
+                        <p><strong>Bio:</strong> {userData.bio || "No bio available"}</p>
+                        <p><strong>Applied Jobs:</strong> {userData.jobApplications.length > 0 ? userData.jobApplications.join(", ") : "None"}</p>
+                        <button className="edit-btn" onClick={() => setIsEditing(true)}>Edit Profile</button>
+                    </div>
                 ) : (
+                    // Editable form fields
                     <>
                         <input type="text" name="firstName" value={userData.firstName} onChange={handleChange} placeholder="First Name" />
                         <input type="text" name="lastName" value={userData.lastName} onChange={handleChange} placeholder="Last Name" />
                         <input type="email" name="email" value={userData.email} onChange={handleChange} placeholder="Email" />
-                        <textarea name="skills" value={userData.skills} onChange={handleChange} placeholder="List out your skills, separated by a comma"></textarea>
+                        <textarea name="skills" value={userData.skills} onChange={handleChange} placeholder="List your skills, separated by commas"></textarea>
                         <textarea name="bio" value={userData.bio} onChange={handleChange} placeholder="Write your bio..."></textarea>
 
-                        <h3>Select Companies You've Applied To</h3>
+                        <h3>Select Companies You&apos;ve Applied To</h3>
                         <div className="company-list">
                             {companies.map((company) => (
                                 <label key={company} className="company-option">
