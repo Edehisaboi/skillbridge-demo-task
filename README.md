@@ -29,7 +29,7 @@ backend/
 │── database/
 │   └── connection.js  # Manages MongoDB connection
 │── server.js  # Initializes Express server, connects database, and sets up routes
-│── .env  # Stores environment variables (e.g., database URI, JWT secret)
+│── .env  # Stores environment variables (database URI, JWT secret,..)
 ```
 
 #### **How It Works:**
@@ -66,8 +66,7 @@ frontend/
 │   │   ├── auth.css  # Styles for authentication pages
 │   │   ├── dashboard.css  # Styles for dashboard
 │   ├── App.jsx  # Defines routes and manages authentication state
-│   ├── index.jsx  # Renders React app
-│── .env  # Stores API base URLs if needed
+│   ├── main.jsx  # Renders React app
 ```
 
 #### **How It Works:**
