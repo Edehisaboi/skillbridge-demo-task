@@ -1,0 +1,85 @@
+.dashboard-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: left;
+}
+
+h2, h3 {
+    text-align: center;
+}
+
+.profile-section {
+    margin-top: 20px;
+}
+
+.user-details {
+    font-size: 16px;
+    margin: 10px 12px 0 0;
+}
+
+input, textarea {
+    width: 95%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.edit-btn {
+    padding: 10px 15px;
+    margin: 10px auto;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    display: block;
+}
+
+.save-btn {
+    padding: 10px 15px;
+    margin: 10px auto;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    display: block;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button:first-of-type {
+    background: #28a745;
+    color: white;
+}
+
+.cancel-btn {
+    padding: 10px 15px;
+    margin: 10px auto;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    border-radius: 5px;
+    display: block;
+    background: #dc3545;
+    color: white;
+}
+
+.company-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.company-option {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
